@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosé & Bloom | Luxury Florals</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Rosé & Bloom.</div>
+        <div class="links">
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="cart-btn" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar (Hidden by default) -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Basket</h2>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: $<span id="cart-total">0.00</span></div>
+            <button class="checkout-btn" onclick="alert('Proceeding to checkout...')">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Hero Section (Parallax) -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Romance in Bloom</h1>
+            <p>Timeless red roses and delicate pink petals.</p>
+            <a href="#shop" class="btn">Shop The Collection</a>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="cat-item">
+            <img src="rose_b.jpg" alt="Rose Bouquets">
+            <h3>Rose Bouquets</h3>
+        </div>
+        <div class="cat-item">
+            <img src="l_box.jpg" alt="Love Boxes">
+            <h3>Love Boxes</h3>
+        </div>
+        <div class="cat-item">
+            <img src="wedding.jpeg" alt="Weddings">
+            <h3>Weddings</h3>
+        </div>
+    </section>
+
+    <!-- Main Shop Section -->
+    <section id="shop" class="products">
+        <div class="section-title">
+            <h2>The Passion Edit</h2>
+            <p>Curated arrangements for your special moments</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Flower 1 -->
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=600" alt="Red Roses">
+                </div>
+                <div class="details">
+                    <h3>Scarlet Love</h3>
+                    <span class="price">$65.00</span>
+                </div>
+                <button class="add-btn" onclick="addToCart('Scarlet Love', 65)">Add to Cart</button>
+            </div>
+            <!-- Flower 2 -->
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="tulip.png" alt="Pink Tulips">
+                </div>
+                <div class="details">
+                    <h3>Blush Tulips</h3>
+                    <span class="price">$42.00</span>
+                </div>
+                <button class="add-btn" onclick="addToCart('Blush Tulips', 42)">Add to Cart</button>
+            </div>
+            <!-- Flower 3 -->
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="mixed.jpg" alt="Mixed Bouquet">
+                </div>
+                <div class="details">
+                    <h3>Sweetheart Mix</h3>
+                    <span class="price">$55.00</span>
+                </div>
+                <button class="add-btn" onclick="addToCart('Sweetheart Mix', 55)">Add to Cart</button>
+            </div>
+            <!-- Flower 4 -->
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="pink.jpg" alt="Wildflowers">
+                </div>
+                <div class="details">
+                    <h3>Pink Meadow</h3>
+                    <span class="price">$38.00</span>
+                </div>
+                <button class="add-btn" onclick="addToCart('Pink Meadow', 38)">Add to Cart</button>
+            </div>
+            <!-- Flower 5 -->
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1559563362-c667ba5f5480?w=600" alt="Deep Red Roses">
+                </div>
+                <div class="details">
+                    <h3>Midnight Rose</h3>
+                    <span class="price">$75.00</span>
+                </div>
+                <button class="add-btn" onclick="addToCart('Midnight Rose', 75)">Add to Cart</button>
+            </div>
+            <!-- Flower 6 -->
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?w=600" alt="Petals">
+                </div>
+                <div class="details">
+                    <h3>Petal Rain</h3>
+                    <span class="price">$30.00</span>
+                </div>
+                <button class="add-btn" onclick="addToCart('Petal Rain', 30)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (New) -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>Founded in 2025, Rosé & Bloom was born from a passion for the language of flowers. We believe that every petal tells a story of love, gratitude, and elegance. Our florists hand-select only the freshest blooms to create arrangements that take your breath away.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section (New) -->
+    <section id="contact" class="contact-section">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <form onsubmit="event.preventDefault(); alert('Message Sent!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Message" rows="4"></textarea>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Rosé & Bloom.</h2>
+            <p>123 Floral Ave, Garden City, Pallavaram,Chennai</p>
+            <p>Spreading romance since 2025</p>
+            <p>&copy; 2025 Rosé & Bloom Inc.</p>
+        </div>
+    </footer>
+
+    <!-- Link to Javascript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
